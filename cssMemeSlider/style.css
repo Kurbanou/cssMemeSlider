@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.wrapper {
+    width: 100%;    
+    max-width: 1200px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.inner {
+    max-width: 800px;   
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    background-color: #25282a;
+    padding: 20px;
+    margin: 0 auto;
+    justify-content: flex-end;    
+    overflow: hidden;
+}
+
+
+.text {
+    color: white;
+    display: grid;   
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;  
+    order: -1;  
+    margin-right: auto;    
+}
+
+.text p{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2; 
+    display: flex;
+    align-items: center;    
+    display: none;   
+    transition: all .3s;  
+}
+
+.images {
+    width: 100%;      
+    display: grid;   
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    order: -2;
+}
+
+.images img{
+    width: 100%; 
+    display: block;   
+    grid-column: 1 / 2;
+    grid-row: 1 / 2; 
+    display: none;
+    transition: all .3s;  
+}
+
+#radio1:checked ~ .text :nth-child(1),
+#radio2:checked ~ .text :nth-child(2),
+#radio3:checked ~ .text :nth-child(3),
+#radio4:checked ~ .text :nth-child(4) {
+    display: flex; 
+    animation: move-text .3s linear;
+}
+
+#radio1:checked ~ .images :nth-child(1),
+#radio2:checked ~ .images :nth-child(2),
+#radio3:checked ~ .images :nth-child(3),
+#radio4:checked ~ .images :nth-child(4) {
+    display: flex; 
+    animation: move-in 1s linear;
+}
+
+
+input[type="radio"] {
+    display: none;
+}
+
+/* Стилизация кастомной радио-кнопки */
+label {
+  position: relative;
+  padding: 20px;
+  cursor: pointer;
+  font-size: 18px;    
+}
+
+
+label::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3px solid #71abfe;
+  background-color: #71abfe;
+  transition: all .3s;
+}
+
+/* Стилизация активной (выбранной) кнопки */
+input[type="radio"]:checked + label::before {
+  background-color: transparent;
+  border: 3px solid #71abfe;
+}
+
+input[type="radio"]:checked:hover + label::before {
+    background-color: transparent;
+    border: 3px solid white;
+  }
+
+label:hover::before {
+  background-color: white;
+  border: 3px solid white;
+}
+
+label:active::before {
+    background-color: yellow;
+    border: 3px solid yellow;
+}
+
+@media (max-width:768px) {
+   .text {
+    width: 100%;
+    order: 1;
+   }
+
+   .inner {
+    justify-content: center;
+   }
+    
+}
+
+@keyframes move-in {
+    0% {     
+      opacity: 0;
+      
+    } 
+    100% {      
+      opacity: 1;   
+    }
+}
+
+@keyframes move-text {
+    0% {     
+      opacity: 0;
+      transform: translateX(-10%);
+      
+    } 
+    100% {      
+      opacity: 1; 
+      transform: translateX(0%); 
+    }
+}
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
