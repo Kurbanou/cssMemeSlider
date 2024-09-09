@@ -95,16 +95,34 @@ input[type="radio"] {
 
 
 /* Стилизация кастомной радио-кнопки */
-label {   
+label { 
+  padding: .8em; 
+  cursor: pointer; 
+  margin: 0 .3em;
+}
+
+.in {
   width: 1.5em;
   height: 1.5em;
   border-radius: 100%;
   border: solid .2em #71abfe;
-  background-color: #71abfe;  
-  cursor: pointer; 
-  margin: 0 .5em;
-   
-   
+  background-color: #71abfe; 
+}
+
+input[type="radio"]:checked + label .in {
+  background-color: transparent;
+}
+
+label:hover .in {
+  border: solid .2em white;
+  background-color: white; 
+}
+
+input[type="radio"]:active + label .in {
+  border: solid .2em white;
+  background-color: white; 
+
+
 }
 
 
