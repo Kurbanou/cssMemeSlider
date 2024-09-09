@@ -124,7 +124,7 @@ input[type="radio"]:active + label .in {
 }
 
 
-@media (max-width:768px) {
+@media (max-width:48em) {
    .text {
     width: 100%;
     order: 1;
