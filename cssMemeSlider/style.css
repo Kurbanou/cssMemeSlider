@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.wrapper {
+    width: 100%;    
+    max-width: 80em;
+    padding: 0 2em;
+    margin: 0 auto;
+}
+
+.inner {
+    max-width: 60em;   
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 2em;
+    background-color: #25282a;
+    padding: 2em;
+    margin: 0 auto;
+    justify-content: flex-end;    
+    overflow: hidden;
+}
+
+
+.text {
+    color: white;
+    display: grid;   
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;  
+    order: -1;  
+    margin-right: auto;    
+}
+
+.text p{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2; 
+    display: flex;
+    align-items: center;    
+    display: none;   
+    transition: all .3s;  
+}
+
+.images {
+    width: 100%;      
+    display: grid;   
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    order: -2;
+}
+
+.images img{
+    width: 100%; 
+    display: block;   
+    grid-column: 1 / 2;
+    grid-row: 1 / 2; 
+    display: none;
+    transition: all .3s;  
+}
+
+#radio1:checked ~ .text :nth-child(1),
+#radio2:checked ~ .text :nth-child(2),
+#radio3:checked ~ .text :nth-child(3),
+#radio4:checked ~ .text :nth-child(4) {
+    display: flex; 
+    animation: move-text .3s linear;
+}
+
+#radio1:checked ~ .images :nth-child(1),
+#radio2:checked ~ .images :nth-child(2),
+#radio3:checked ~ .images :nth-child(3),
+#radio4:checked ~ .images :nth-child(4) {
+    display: flex; 
+    animation: move-in 1s linear;
+}
+
+
+input[type="radio"] {
+    display: none;
+}
+
+
+/* Стилизация кастомной радио-кнопки */
+label { 
+  padding: .8em; 
+  cursor: pointer; 
+  margin: 0 .3em;
+}
+
+.in {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 100%;
+  border: solid .2em #71abfe;
+  background-color: #71abfe; 
+}
+
+input[type="radio"]:checked + label .in {
+  background-color: transparent;
+}
+
+label:hover .in {
+  border: solid .2em white;
+  background-color: white; 
+}
+
+input[type="radio"]:active + label .in {
+  border: solid .2em white;
+  background-color: white; 
+}
+
+
+@media (max-width:48em) {
+   .text {
+    width: 100%;
+    order: 1;
+   }
+
+   .inner {
+    justify-content: center;
+   }
+    
+}
+
+@keyframes move-in {
+    0% {     
+      opacity: 0;
+      
+    } 
+    100% {      
+      opacity: 1;   
+    }
+}
+
+@keyframes move-text {
+    0% {     
+      opacity: 0;
+      transform: translateX(-10%);
+      
+    } 
+    100% {      
+      opacity: 1; 
+      transform: translateX(0%); 
+    }
+}
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
