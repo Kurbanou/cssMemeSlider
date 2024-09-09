@@ -121,8 +121,6 @@ label:hover .in {
 input[type="radio"]:active + label .in {
   border: solid .2em white;
   background-color: white; 
-
-
 }
 
 
