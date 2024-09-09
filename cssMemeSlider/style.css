@@ -103,45 +103,10 @@ label {
   background-color: #71abfe;  
   cursor: pointer; 
   margin: 0 .5em;
-  
+   
    
 }
 
-
-/* label::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%);
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 3px solid #71abfe;
-  background-color: #71abfe;
-  transition: all .3s;
-}
-
-/* Стилизация активной (выбранной) кнопки */
-/* input[type="radio"]:checked + label::before {
-  background-color: transparent;
-  border: 3px solid #71abfe;
-}
-
-input[type="radio"]:checked:hover + label::before {
-    background-color: transparent;
-    border: 3px solid white;
-  }
-
-label:hover::before {
-  background-color: white;
-  border: 3px solid white;
-} */
-
-/* label:active::before {
-    background-color: yellow;
-    border: 3px solid yellow;
-} */ 
 
 @media (max-width:768px) {
    .text {
