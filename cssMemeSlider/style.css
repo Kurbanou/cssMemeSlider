@@ -18,18 +18,18 @@ body {
 
 .wrapper {
     width: 100%;    
-    max-width: 1200px;
-    padding: 0 20px;
+    max-width: 80em;
+    padding: 0 2em;
     margin: 0 auto;
 }
 
 .inner {
-    max-width: 800px;   
+    max-width: 60em;   
     display: flex;
     flex-wrap: wrap;
-    row-gap: 20px;
+    row-gap: 2em;
     background-color: #25282a;
-    padding: 20px;
+    padding: 2em;
     margin: 0 auto;
     justify-content: flex-end;    
     overflow: hidden;
@@ -93,16 +93,22 @@ input[type="radio"] {
     display: none;
 }
 
+
 /* Стилизация кастомной радио-кнопки */
-label {
-  position: relative;
-  padding: 20px;
-  cursor: pointer;
-  font-size: 18px;    
+label {   
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 100%;
+  border: solid .2em #71abfe;
+  background-color: #71abfe;  
+  cursor: pointer; 
+  margin: 0 .5em;
+  
+   
 }
 
 
-label::before {
+/* label::before {
   content: "";
   position: absolute;
   left: 50%;
@@ -117,7 +123,7 @@ label::before {
 }
 
 /* Стилизация активной (выбранной) кнопки */
-input[type="radio"]:checked + label::before {
+/* input[type="radio"]:checked + label::before {
   background-color: transparent;
   border: 3px solid #71abfe;
 }
@@ -130,12 +136,12 @@ input[type="radio"]:checked:hover + label::before {
 label:hover::before {
   background-color: white;
   border: 3px solid white;
-}
+} */
 
-label:active::before {
+/* label:active::before {
     background-color: yellow;
     border: 3px solid yellow;
-}
+} */ 
 
 @media (max-width:768px) {
    .text {
